@@ -1,0 +1,10 @@
+steps:
+- task: AzureResourceGroupDeployment@2
+  inputs:
+    azureSubscription: 'Swapneel Visual Studio Enterprise'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'CFX-DEV-Demo'
+    location: 'Central US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'CreateAzureStorage/azuredeploy.json'
+    deploymentMode: 'Incremental'
