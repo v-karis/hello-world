@@ -8,3 +8,11 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'CreateAzureStorage/azuredeploy.json'
     deploymentMode: 'Incremental'
+- task: AzureResourceGroupDeployment@2
+  inputs:
+    azureSubscription: 'CfxDemoResourceGroup'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'CFX-DEV-Demo'
+    location: 'Central US'
+    templateLocation: 'Linked artifact'
+    deploymentMode: 'Incremental'
